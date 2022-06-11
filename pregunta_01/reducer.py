@@ -8,8 +8,8 @@ def make_counts(acc, nxt):
     return acc
 
 
-val=str(reduce(
+result=str(reduce(
     make_counts,
-    result,
+    lista,
     {},
 ))
