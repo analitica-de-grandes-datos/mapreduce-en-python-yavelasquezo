@@ -12,4 +12,3 @@ lista=[]
 for i in file:
   lista.append(i[2])
 lista.sort(reverse=False)
-result=lista
