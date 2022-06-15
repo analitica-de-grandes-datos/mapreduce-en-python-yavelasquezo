@@ -5,24 +5,24 @@ import sys
 if __name__ =='__main__':
 
     curkey=None
-    maximo=[]
+    maximo=0
 
     for line in sys.stdin:
 
-        key,val=line.split('\t')
+        key=line[0].split('\t')
+        val=line[1].split('\t')
         val=int(val)
 
-        if key == curkey:
+        if key == curkey and val > maximo:
 
-            maximo.append(val)
+            maximo=val
 
         else:
             if curkey is not None:
 
-                sys.stdout.write("{}\t{}\n".format(curkey,total))
+                sys.stdout.write("{}\t{}\n".format(curkey,maximo))
             
             curkey=key
-            maximo.append[val]
-        total=max(maximo)
-        maximo=0
-    sys.stdout.write("{}\t{}\n".format(curkey,total))
+            maximo=maximo
+        
+    sys.stdout.write("{}\t{}\n".format(curkey,maximo))
