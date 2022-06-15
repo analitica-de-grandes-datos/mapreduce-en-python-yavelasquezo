@@ -7,5 +7,6 @@ if __name__ == "__main__":
   for line in sys.stdin:
 
     lista=line.split(',')
-    
-    sys.stdout.write("{}\t1\n".format(lista[3:5]))
+    primeracol=lista[3]
+    segundacol=lista[4]
+    sys.stdout.write(f"{primeracol}\t{segundacol}\n")
