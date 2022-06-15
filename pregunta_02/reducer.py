@@ -5,6 +5,7 @@ import sys
 if __name__ =='__main__':
 
     curkey=None
+    total=0
     maximo=0
 
     for line in sys.stdin:
@@ -13,16 +14,22 @@ if __name__ =='__main__':
        
         val=int(val)
 
-        if key == curkey and val > maximo:
+        if key == curkey:
+            if val > maximo:
 
-            maximo=val
+                maximo=val
+                total=maximo
+            else:
+                val=maximo
+                total=val
 
         else:
             if curkey is not None:
 
-                sys.stdout.write("{}\t{}\n".format(curkey,maximo))
-            
+                sys.stdout.write("{}\t{}\n".format(curkey,total))
+                
             curkey=key
-            maximo=maximo
+            maximo=val
+            total=val
         
-    sys.stdout.write("{}\t{}\n".format(curkey,maximo))
+    sys.stdout.write("{}\t{}\n".format(curkey,total))
