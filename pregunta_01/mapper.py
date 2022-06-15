@@ -2,13 +2,9 @@
 # >>> Escriba el codigo del mapper a partir de este punto <<<
 #
 
-file=open("credit.csv", "r").readlines()
+import sys
 
-file=[z.replace("\n","")for z in file]
-file=[z.split(",") for z in file]
-lista=[]
-
-#Map
-for i in file:
-  lista.append(i[2])
-lista.sort(reverse=False)
+if __name__ == "__main__":
+  for line in sys.stdin:
+    lista=line.split(',')
+    sys.stdout.write("{}\t1\n".format(lista[2]))
