@@ -9,8 +9,8 @@ if __name__ =='__main__':
 
     for line in sys.stdin:
 
-        key=line[0].split('\t')
-        val=line[1].split('\t')
+        key,val=line.split('\t')
+       
         val=int(val)
 
         if key == curkey and val > maximo:
