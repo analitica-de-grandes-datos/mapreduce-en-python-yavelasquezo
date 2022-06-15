@@ -2,14 +2,19 @@
 # >>> Escriba el codigo del reducer a partir de este punto <<<
 #
 
-from functools import reduce
-def make_counts(acc, nxt):
-    acc[nxt] = acc.get(nxt, 0) + 1
-    return acc
-
-
-result=str(reduce(
-    make_counts,
-    lista,
-    {},
-))
+from signal import valid_signals
+import sys
+if __name__ =="__main__":
+    curkey=None
+    total=0
+    for line in sys.stdin:
+        key,val=line.split('\t')
+        val=int(val)
+        if key == curkey:
+            total+=val
+        else:
+            if curkey is not None:
+                sys.stdout.write("{}\t{}\n".format(curkey,total))
+            curkey=key
+            total=val
+        sys.stdout.write("{}\t{}\n".format(curkey,total))
