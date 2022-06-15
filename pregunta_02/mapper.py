@@ -8,4 +8,4 @@ if __name__ == "__main__":
 
     lista=line.split(',')
     
-    sys.stdout.write("{}\t1\n".format(lista[3:4]))
+    sys.stdout.write("{}\t1\n".format(lista[3:5]))
